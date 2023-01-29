@@ -8,3 +8,4 @@
 *.db
 *.sqbpro
 !BooksAndAuthors.py
+!BooksAndAuthors.sql

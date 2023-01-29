@@ -43,6 +43,7 @@ with sqlite3.connect("mydb.db") as connection:
         INSERT INTO BooksAndAuthors (ID_books, ID_authors) VALUES ("4", "6");
         INSERT INTO BooksAndAuthors (ID_books, ID_authors) VALUES ("6", "2");
         """)
+# №1 Вывести Авторов по названию Книги
     cursore.execute("""
         Select Books.ID
         From Books
@@ -56,6 +57,7 @@ with sqlite3.connect("mydb.db") as connection:
         FROM Authors
         WHERE ID In (8,1,2);
         """)
+# №2 Вывести Книги у которых год издания больше или равен 2020 у Автора указав его фамилию
     cursore.execute("""
         SELECT Books.ID
         FROM Books
@@ -69,11 +71,13 @@ with sqlite3.connect("mydb.db") as connection:
         FROM Authors, Books
         WHERE Authors.ID In (2,8,7,3,1,2,3,5,6,2) AND Books.Year >= 2020;
     """)
-    cursore.execute ("""
+# №3 Удалить Книгу по названию из таблицы (при этом связь должна удаляться автоматически)
+    name = input("Введите имя книги когорое хотите удалить: ")
+    cursore.executemany ("""
         SELECT Books.ID
         FROM Books
-        WHERE Books.name == "Между двух миров";
+        WHERE Books.name == "?";
 
-        DELETE BooksAndAuthors
+        DELETE FROM BooksAndAuthors
         WHERE ID_books == 6;
-    """)
+    """, name)
