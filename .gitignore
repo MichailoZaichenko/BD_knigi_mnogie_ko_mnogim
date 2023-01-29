@@ -1,0 +1,10 @@
+*.png
+*.txt
+*.pdf
+*.py
+*.sql
+*.vsdx
+*.jpg
+*.db
+*.sqbpro
+!BooksAndAuthors.py
