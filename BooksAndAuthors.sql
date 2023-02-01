@@ -92,9 +92,10 @@ INSERT INTO BooksAndAuthors (ID_books, ID_authors) VALUES ("6", "2");
 
 -- №3 Удалить Книгу по названию из таблицы (при этом связь должна удаляться автоматически)
 
--- SELECT Books.ID
--- FROM Books
--- WHERE Books.name == "Между двух миров";
+SELECT Books.ID
+FROM Books
+WHERE Books.name == "Между двух миров";
 
--- DELETE BooksAndAuthors
--- WHERE ID_books == 6;
+DELETE FROM BooksAndAuthors
+WHERE ID_books == 6;
+
